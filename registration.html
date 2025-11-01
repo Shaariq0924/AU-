@@ -1,52 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Registration - SEATNGA - 2026</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/registration.css">
+
+  <!-- Your sitewide styles -->
+  <link rel="stylesheet" href="css/styles.css"/>
+
+  <!-- Page-specific styles -->
+  <link rel="stylesheet" href="css/registration.css"/>
 </head>
 <body>
-  <!-- Logo Header with Simple Toggle Navigation -->
+  <!-- Header -->
   <section class="logo-header">
     <div class="logo-container">
       <img src="images/logo.png" alt="Anurag University Logo" class="header-logo" />
-      <!-- Simple Toggle Button -->
-      <button class="nav-toggle" aria-label="Toggle Navigation" aria-expanded="false" aria-controls="primary-navigation" onclick="toggleNav()">
-        ☰
-      </button>
+      <button class="nav-toggle" aria-label="Toggle Navigation" aria-expanded="false" aria-controls="primary-navigation" onclick="toggleNav()">☰</button>
 
       <nav class="header-nav" id="primary-navigation">
         <ul>
           <li><a href="index.html">HOME</a></li>
           <li><a href="committees.html">COMMITTEES</a></li>
-            <li><a href="speakers.html">SPEAKERS</a></li>
+          <li><a href="speakers.html">SPEAKERS</a></li>
           <li><a href="call_for_papers.html">CALL FOR PAPERS</a></li>
           <li><a href="submission.html">SUBMISSION</a></li>
-          <li><a href="dates.html" >IMPORTANT DATES</a></li>
+          <li><a href="dates.html">IMPORTANT DATES</a></li>
           <li><a href="registration.html" class="active">REGISTRATION</a></li>
           <li><a href="past_conferences.html">PAST CONFERENCES</a></li>
           <li><a href="contact.html">CONTACT</a></li>
         </ul>
       </nav>
     </div>
-    
-    <!-- Add overlay for mobile menu -->
-    <div class="nav-overlay" onclick="closeNav()">☰</div>
+    <div class="nav-overlay" onclick="closeNav()" aria-hidden="true"></div>
   </section>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero">
-    <img src="images/anurag_group_of_institutions_cover.jpg" alt="Hero Background" class="hero-bg" />
-    
+    <img src="images/anurag_group_of_institutions_cover.jpg" alt="" class="hero-bg"/>
     <div class="hero-overlay"></div>
     <div class="hero-gradient"></div>
-    
+
     <div class="hero-logo-section">
-      <img src="images/logo_main.png" alt="Hero Logo" class="hero-logo" />
+      <img src="images/logo_main.png" alt="SEATNGA Logo" class="hero-logo"/>
     </div>
-    
+
     <div class="hero-container">
       <div class="hero-content">
         <h2>
@@ -58,75 +56,134 @@
     </div>
   </section>
 
-    <!-- Coming Soon Section -->
-    <section class="coming-soon">
-        <div class="coming-soon-container">
-            <div class="loading-animation">
-                <div class="spinner"></div>
-                <div class="pulse-ring"></div>
-            </div>
-            
-            <h1 class="coming-soon-title">Registration Portal</h1>
-            <h2 class="coming-soon-subtitle">Coming Soon</h2>
-            
-            <p class="coming-soon-description">
-                We're working hard to bring you the best registration experience. 
-                Our registration portal will be available soon with enhanced features 
-                and streamlined process for SEATNGA 2025.
-            </p>
-            
-            <div class="features-preview">
-                <div class="feature-item">
-                    <div class="feature-icon">⚡</div>
-                    <span>Quick Registration</span>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🔒</div>
-                    <span>Secure Payment</span>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">📧</div>
-                    <span>Instant Confirmation</span>
-                </div>
-            </div>
-            
-            <div class="countdown-container">
-                <div class="countdown-text">Registration opens in:</div>
-                <div class="countdown" id="countdown">
-                    <div class="time-unit">
-                        <span id="days">00</span>
-                        <label>Days</label>
-                    </div>
-                    <div class="time-unit">
-                        <span id="hours">00</span>
-                        <label>Hours</label>
-                    </div>
-                    <div class="time-unit">
-                        <span id="minutes">00</span>
-                        <label>Minutes</label>
-                    </div>
-                    <div class="time-unit">
-                        <span id="seconds">00</span>
-                        <label>Seconds</label>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="notification-signup">
-                <h3>Get Notified When We Launch</h3>
-                <div class="email-form">
-                    <input type="email" placeholder="Enter your email address" id="emailInput">
-                    <button type="button" id="notifyBtn">Notify Me</button>
-                </div>
-                <p class="privacy-note">We'll send you a single notification when registration opens. No spam, promise!</p>
-            </div>
+  <!-- Registration -->
+  <section class="registration">
+    <div class="container">
+      <h1 class="section-title">Registration</h1>
+      <p class="section-subtitle">Fee structure and payment details for Indian and International authors.</p>
+
+      <!-- Registration Guidelines -->
+      <section class="card" aria-labelledby="guidelinesTitle" style="margin-bottom:16px;">
+        <div class="card-head">Registration Guidelines</div>
+        <div style="padding:16px 20px;">
+          <p>
+            At least one author of each accepted paper must complete registration and pay the appropriate fee for inclusion in the SEATNGA 2026 conference program and for submission to the publisher (subject to quality compliance and presentation at the conference). 
+          </p>
+          <ul style="margin:12px 0 0 18px;">
+            <li>Deadline: At least one author must register on or before <strong>30 September 2025</strong>.</li>
+            <li>Eligibility for publication: Only <strong>registered and presented</strong> papers will be submitted to the publisher’s digital library (as applicable).</li>
+            <li>Each full registration covers <strong>one (1) paper</strong> up to <strong>6 pages</strong>.</li>
+            <li>Up to <strong>2 additional pages</strong> allowed with an overlength fee of <strong>₹2500 / $30 per extra page</strong>.</li>
+            <li>Registration fees are <strong>non‑refundable</strong>.</li>
+            <li>Retain your <strong>payment transaction ID/receipt</strong> for the registration form.</li>
+            <li>IEEE/Student categories require a valid <strong>IEEE membership card</strong> or <strong>student ID</strong> upload (if applicable).</li>
+            <li>After payment, complete the <strong>Google Registration Form</strong> (one form per Paper ID) by <strong>30 September 2025</strong>.</li>
+            <li>Late registration allowed up to <strong>10 October 2025</strong> with a <strong>10% additional fee</strong>.</li>
+            <li>Select the correct category (Student/Professional, Virtual/Physical) and country (Indian/Foreign) while registering.</li>
+          </ul>
         </div>
-    </section>
+      </section>
 
+      <!-- Fees table -->
+      <div class="card">
+        <div class="card-head">Author Categories and Fees</div>
+        <div class="table-wrap" role="region" aria-labelledby="feeTableTitle" tabindex="0">
+          <table class="fee-table fees-alt">
+            <thead>
+              <tr>
+                <th rowspan="2" scope="col">Authors Category</th>
+                <th colspan="2" scope="colgroup">Indian (Virtual Mode)</th>
+                <th colspan="2" scope="colgroup">Indian (Physical Mode)</th>
+                <th colspan="2" scope="colgroup">Foreign</th>
+              </tr>
+              <tr>
+                <th scope="col">Early Bird</th>
+                <th scope="col">Late Fee</th>
+                <th scope="col">Early Bird</th>
+                <th scope="col">Late Fee</th>
+                <th scope="col">Early Bird</th>
+                <th scope="col">Late Fee</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Academic Institutions / Research Scholars / P.G. Students</td>
+                <td><span class="amount">Rs 7500</span></td>
+                <td><span class="amount">Rs 8500</span></td>
+                <td><span class="amount">Rs 8000</span></td>
+                <td><span class="amount">Rs 9000</span></td>
+                <td><span class="amount">$ 120</span></td>
+                <td><span class="amount">$ 150</span></td>
+              </tr>
+              <tr>
+                <td>Industry</td>
+                <td><span class="amount">Rs 8000</span></td>
+                <td><span class="amount">Rs 9000</span></td>
+                <td><span class="amount">Rs 8500</span></td>
+                <td><span class="amount">Rs 9500</span></td>
+                <td><span class="amount">$ 150</span></td>
+                <td><span class="amount">$ 200</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-     <!-- Logos -->
+      <!-- Payment details: two-column -->
+      <section class="payment-split" aria-labelledby="paymentSplitTitle">
+        <h2 id="paymentSplitTitle" class="block-title">Conference Registration Fee Payment Details</h2>
+        <div class="pay-grid">
+          <!-- Indian -->
+          <div class="pay-card">
+            <div class="pay-head">Indian Authors</div>
+            <table class="kv-table" role="table" aria-label="Indian Payment Details">
+              <tbody>
+                <tr><th>Account Name</th><td>ANURAG GROUP OF INSTITUTIONS</td></tr>
+                <tr><th>Account Number</th><td>62030885098</td></tr>
+                <tr><th>Bank Name</th><td>STATE BANK OF INDIA, GHATKESAR</td></tr>
+                <tr><th>Branch Name</th><td>Ghatkesar</td></tr>
+                <tr><th>IFSC Code</th><td>SBIN0020450</td></tr>
+                <tr><th>Institute Address</th><td>AU Campus, Hyderabad, Telangana – 500XXX</td></tr>
+                <tr><th>Payment Remark</th><td>SEATNGA_Paper ID (e.g., SEATNGA_157XXXX)</td></tr>
+              </tbody>
+            </table>
+            <div class="pay-note">Note: If any error occurs, retry or contact your bank.</div>
+          </div>
+
+          <!-- International -->
+          <div class="pay-card">
+            <div class="pay-head">International Authors</div>
+            <table class="kv-table" role="table" aria-label="International Payment Details">
+              <tbody>
+                <tr><th>Account Name</th><td>Anurag University</td></tr>
+                <tr><th>Account Number</th><td>XXXXXXXXXXXX</td></tr>
+                <tr><th>Bank Name</th><td>ABC Bank, Hyderabad</td></tr>
+                <tr><th>Branch Name</th><td>Ghatkesar</td></tr>
+                <tr><th>SWIFT Code</th><td>ABCDINBBXXX</td></tr>
+                <tr><th>IFSC Code</th><td>ABCD0123456</td></tr>
+                <tr><th>Institute Address</th><td>AU Campus, Hyderabad, Telangana – 500XXX</td></tr>
+                <tr><th>Payment Remark</th><td>SEATNGA_Paper ID (e.g., SEATNGA_157XXXX)</td></tr>
+              </tbody>
+            </table>
+            <div class="pay-note">Note: International transfers must include SWIFT code.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Registration CTA -->
+      <section class="reg-links-block single-link" aria-labelledby="regLinkTitle">
+        <h2 id="regLinkTitle" class="block-title">Registration Link</h2>
+        <a class="reg-link-card" href="http://127.0.0.1:5501/registration.html#" target="_blank" rel="noopener">
+          <span class="label">Click here to register</span>
+          <span class="url">http://127.0.0.1:5501/registration.html#</span>
+        </a>
+      </section>
+    </div>
+  </section>
+
+  <!-- Logos -->
   <section class="logos">
-    <img src="images/logo.png" alt="Anurag University" />
+    <img src="images/logo.png" alt="Anurag University"/>
   </section>
 
   <!-- Footer -->
@@ -134,77 +191,44 @@
     <p>&copy; 2026 Anurag University. All Rights Reserved.</p>
   </footer>
 
-  <!-- Enhanced JavaScript for Toggle -->
+  <!-- Navigation JS -->
   <script>
     function toggleNav() {
       const nav = document.getElementById('primary-navigation');
       const toggleBtn = document.querySelector('.nav-toggle');
       const overlay = document.querySelector('.nav-overlay');
       const isOpen = nav.classList.toggle('nav-open');
-      
-      // Update button state
+
       toggleBtn.classList.toggle('active', isOpen);
       toggleBtn.setAttribute('aria-expanded', isOpen);
       toggleBtn.textContent = isOpen ? '✖' : '☰';
-      
-      // Handle overlay
-      if (overlay) {
-        overlay.classList.toggle('active', isOpen);
-      }
-      
-      // Prevent body scroll when menu is open
+
+      if (overlay) overlay.classList.toggle('active', isOpen);
       document.body.style.overflow = isOpen ? 'hidden' : 'auto';
-      
-      // Add smooth animation delay for menu items
+
       if (isOpen) {
-        const menuItems = nav.querySelectorAll('ul li');
-        menuItems.forEach((item, index) => {
-          item.style.transitionDelay = `${0.1 + index * 0.05}s`;
-        });
+        const items = nav.querySelectorAll('ul li');
+        items.forEach((item, i) => item.style.transitionDelay = `${0.1 + i*0.05}s`);
       }
     }
-
     function closeNav() {
       const nav = document.getElementById('primary-navigation');
       const toggleBtn = document.querySelector('.nav-toggle');
       const overlay = document.querySelector('.nav-overlay');
-      
+
       nav.classList.remove('nav-open');
       toggleBtn.classList.remove('active');
       toggleBtn.setAttribute('aria-expanded', false);
       toggleBtn.textContent = '☰';
-      
-      if (overlay) {
-        overlay.classList.remove('active');
-      }
-      
+      if (overlay) overlay.classList.remove('active');
       document.body.style.overflow = 'auto';
     }
-
-    // Enhanced event listeners
-    document.addEventListener('DOMContentLoaded', function() {
-      // Close menu on link click (mobile)
+    document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.header-nav ul li a').forEach(link => {
-        link.addEventListener('click', () => {
-          if (window.innerWidth <= 1024) {
-            closeNav();
-          }
-        });
+        link.addEventListener('click', () => { if (window.innerWidth <= 1024) closeNav(); });
       });
-      
-      // Close nav on window resize if desktop
-      window.addEventListener('resize', () => {
-        if (window.innerWidth > 1024) {
-          closeNav();
-        }
-      });
-      
-      // Handle escape key
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-          closeNav();
-        }
-      });
+      window.addEventListener('resize', () => { if (window.innerWidth > 1024) closeNav(); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
     });
   </script>
 </body>
