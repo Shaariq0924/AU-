@@ -110,8 +110,8 @@
                 <td>Academic Institutions / Research Scholars / P.G. Students</td>
                 <td><span class="amount">Rs 7500</span></td>
                 <td><span class="amount">Rs 8500</span></td>
-                <td><span class="amount">Rs 8000</span></td>
-                <td><span class="amount">Rs 9000</span></td>
+                <td><span class="amount">Rs 8500</span></td>
+                <td><span class="amount">Rs 9500</span></td>
                 <td><span class="amount">$ 120</span></td>
                 <td><span class="amount">$ 150</span></td>
               </tr>
@@ -119,8 +119,8 @@
                 <td>Industry</td>
                 <td><span class="amount">Rs 8000</span></td>
                 <td><span class="amount">Rs 9000</span></td>
-                <td><span class="amount">Rs 8500</span></td>
-                <td><span class="amount">Rs 9500</span></td>
+                <td><span class="amount">Rs 9000</span></td>
+                <td><span class="amount">Rs 1000</span></td>
                 <td><span class="amount">$ 150</span></td>
                 <td><span class="amount">$ 200</span></td>
               </tr>
@@ -129,7 +129,7 @@
         </div>
       </div>
 
-      <!-- Payment details: two-column -->
+      <!-- Payment details: one-column (International removed) -->
       <section class="payment-split" aria-labelledby="paymentSplitTitle">
         <h2 id="paymentSplitTitle" class="block-title">Conference Registration Fee Payment Details</h2>
         <div class="pay-grid">
@@ -147,25 +147,22 @@
                 <tr><th>Payment Remark</th><td>SEATNGA_Paper ID (e.g., SEATNGA_157XXXX)</td></tr>
               </tbody>
             </table>
-            <div class="pay-note">Note: If any error occurs, retry or contact your bank.</div>
-          </div>
 
-          <!-- International -->
-          <div class="pay-card">
-            <div class="pay-head">International Authors</div>
-            <table class="kv-table" role="table" aria-label="International Payment Details">
-              <tbody>
-                <tr><th>Account Name</th><td>Anurag University</td></tr>
-                <tr><th>Account Number</th><td>XXXXXXXXXXXX</td></tr>
-                <tr><th>Bank Name</th><td>ABC Bank, Hyderabad</td></tr>
-                <tr><th>Branch Name</th><td>Ghatkesar</td></tr>
-                <tr><th>SWIFT Code</th><td>ABCDINBBXXX</td></tr>
-                <tr><th>IFSC Code</th><td>ABCD0123456</td></tr>
-                <tr><th>Institute Address</th><td>AU Campus, Hyderabad, Telangana – 500XXX</td></tr>
-                <tr><th>Payment Remark</th><td>SEATNGA_Paper ID (e.g., SEATNGA_157XXXX)</td></tr>
-              </tbody>
-            </table>
-            <div class="pay-note">Note: International transfers must include SWIFT code.</div>
+            <!-- Scan & Pay block -->
+            <div class="scan-pay">
+              <h3 class="scan-title">Scan & Pay (UPI)</h3>
+              <!-- Save the QR as an image file (e.g., images/qr-au-sbi.png) after exporting from the provided PDF -->
+              <div class="qr-wrap">
+                <img src="images/au_qr.png" alt="UPI QR to pay ANURAG GROUP OF INSTITUTIONS" class="qr-image"/>
+              </div>
+              <div class="upi-meta">
+                <p><strong>Merchant:</strong> ANURAG GROUP OF INSTITUTIONS</p>
+                <p><strong>UPI ID:</strong> auaccounts@sbi</p>
+                <p class="pay-note">Use any UPI app (BHIM, SBI Pay, etc.), enter Paper ID in remarks, and save the transaction ID/receipt.</p>
+              </div>
+            </div>
+
+            <div class="pay-note">Note: If any error occurs, retry or contact your bank.</div>
           </div>
         </div>
       </section>
@@ -173,11 +170,18 @@
       <!-- Registration CTA -->
       <section class="reg-links-block single-link" aria-labelledby="regLinkTitle">
         <h2 id="regLinkTitle" class="block-title">Registration Link</h2>
-        <a class="reg-link-card" href="http://127.0.0.1:5501/registration.html#" target="_blank" rel="noopener">
-          <span class="label">Click here to register</span>
-          <span class="url">http://127.0.0.1:5501/registration.html#</span>
-        </a>
+        <div class="reg-link-card">
+          <a 
+            href="https://forms.gle/xj6FJPR72KipWTxT8" 
+            target="_blank" 
+            rel="noopener" 
+            class="register-btn"
+          >
+            Click here to register
+          </a>
+        </div>
       </section>
+
     </div>
   </section>
 

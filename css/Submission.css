@@ -1,669 +1,145 @@
-/* ====== PAPER SUBMISSION SECTION ====== */
+/* =========================================
+   SEATNGA 2026 — Submission Section Styles
+   Light • Clean • Accessible • Performant
+========================================= */
+
+/* Section wrapper */
 .paper-submission {
-    width: 100vw;
-    max-width: none;
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 30%, #f1f5f9 70%, #ffffff 100%);
-    padding: 80px 40px;
-    margin: 0;
-    box-sizing: border-box;
-    position: relative;
-    overflow: hidden;
-    min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 30%, #f1f5f9 70%, #ffffff 100%);
+  padding: 72px 24px;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Subtle background accents */
 .paper-submission::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 80%, rgba(190, 38, 51, 0.04) 0%, transparent 60%),
-        radial-gradient(circle at 80% 20%, rgba(36, 54, 88, 0.04) 0%, transparent 60%);
-    pointer-events: none;
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(50% 50% at 18% 82%, rgba(190, 38, 51, 0.05) 0%, transparent 65%),
+    radial-gradient(50% 50% at 82% 18%, rgba(36, 54, 88, 0.05) 0%, transparent 65%);
+  pointer-events: none;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
+.paper-submission .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
-/* ====== ENHANCED HEADINGS ====== */
+/* Headings */
 .paper-submission h3 {
-    font-size: clamp(1.4rem, 4vw, 2.4rem);
-    color: #243658;
-    margin-bottom: 35px;
-    font-weight: 800;
-    position: relative;
-    display: inline-block;
-    padding-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: clamp(0.5px, 0.3vw, 1.5px);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    background: linear-gradient(135deg, #243658 0%, #BE2633 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  margin: 0 0 22px;
+  font: 800 clamp(1.3rem, 3.2vw, 2rem)/1.2 Inter, "Segoe UI", Roboto, system-ui, -apple-system, sans-serif;
+  color: #243658;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 12px;
+  letter-spacing: clamp(0.4px, 0.25vw, 1.2px);
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #243658 0%, #BE2633 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .paper-submission h3::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: clamp(60px, 15vw, 100px);
-    height: 4px;
-    background: linear-gradient(135deg, #BE2633, #243658);
-    border-radius: 4px;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 15px rgba(190, 38, 51, 0.3);
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: clamp(64px, 12vw, 96px);
+  height: 3px;
+  background: linear-gradient(135deg, #BE2633, #243658);
+  border-radius: 3px;
+  box-shadow: 0 3px 12px rgba(190, 38, 51, 0.28);
 }
 
-.paper-submission h3:hover {
-    transform: translateX(10px);
-    letter-spacing: clamp(1px, 0.4vw, 2px);
+.paper-submission .container > h3:not(:first-child) {
+  margin-top: 28px;
 }
 
-.paper-submission h3:hover::after {
-    width: clamp(90px, 20vw, 150px);
-    box-shadow: 0 6px 20px rgba(190, 38, 51, 0.4);
-}
-
-/* ====== ENHANCED PARAGRAPHS ====== */
+/* Paragraphs */
 .paper-submission p {
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    color: #4a5568;
-    line-height: 1.9;
-    margin-bottom: clamp(20px, 4vw, 30px);
-    transition: all 0.3s ease;
-    font-weight: 500;
-    text-align: justify;
-    position: relative;
-    padding: clamp(15px, 3vw, 20px);
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 12px;
-    border-left: 4px solid transparent;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  margin: 0 0 14px;
+  color: #394a5c;
+  font: 500 clamp(1rem, 1.9vw, 1.06rem)/1.85 Inter, "Segoe UI", Roboto, system-ui, -apple-system, sans-serif;
 }
 
-.paper-submission p:hover {
-    color: #2d3748;
-    transform: translateX(8px);
-    background: rgba(255, 255, 255, 0.8);
-    border-left-color: #BE2633;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+.paper-submission p + p {
+  margin-top: 6px;
 }
 
-/* ====== ENHANCED LISTS ====== */
+/* Simpler lists (disc bullets) */
 .paper-submission ul {
-    list-style: none;
-    margin: 0 0 clamp(30px, 5vw, 40px) 0;
-    padding: 0;
+  list-style: disc;
+  margin: 0 0 18px 22px;
+  padding: 0;
 }
 
 .paper-submission ul li {
-    font-size: clamp(1rem, 2.3vw, 1.15rem);
-    color: #4a5568;
-    line-height: 1.8;
-    margin-bottom: clamp(15px, 3vw, 20px);
-    padding: clamp(15px, 3vw, 20px) clamp(20px, 4vw, 25px) clamp(15px, 3vw, 20px) clamp(45px, 8vw, 60px);
-    position: relative;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.8) 100%);
-    border-radius: 15px;
-    border-left: 5px solid rgba(190, 38, 51, 0.3);
-    backdrop-filter: blur(15px);
-    box-shadow: 
-        0 4px 15px rgba(0, 0, 0, 0.06),
-        inset 0 1px 0 rgba(255, 255, 255, 0.6);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    font-weight: 500;
+  margin: 0 0 8px;
+  color: #3a4657;
+  font: 500 clamp(0.98rem, 1.6vw, 1.04rem)/1.75 Inter, "Segoe UI", Roboto, system-ui, -apple-system, sans-serif;
 }
 
-.paper-submission ul li::before {
-    content: '◆';
-    position: absolute;
-    left: clamp(18px, 4vw, 25px);
-    top: 50%;
-    transform: translateY(-50%);
-    color: #BE2633;
-    font-size: clamp(1rem, 2.5vw, 1.2em);
-    font-weight: bold;
-    transition: all 0.3s ease;
+/* Nested lists, if any */
+.paper-submission ul ul {
+  margin: 6px 0 6px 18px;
 }
 
-.paper-submission ul li:hover {
-    transform: translateX(10px);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.9) 100%);
-    border-left-color: #BE2633;
-    box-shadow: 
-        0 8px 25px rgba(0, 0, 0, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+/* Links */
+.paper-submission a {
+  color: #1d4ed8;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(29, 78, 216, 0.5);
 }
 
-.paper-submission ul li:hover::before {
-    color: #243658;
-    transform: translateY(-50%) scale(1.2);
+.paper-submission a:hover {
+  text-decoration: underline;
+  border-bottom-color: transparent;
 }
 
-/* ====== SIMPLE & CLEAN TABLE STYLING ====== */
-.paper-submission table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    margin: clamp(30px, 5vw, 40px) 0;
-    transition: all 0.3s ease;
-    font-size: clamp(0.9rem, 2vw, 1.05rem);
+.paper-submission a:focus-visible {
+  outline: 3px solid rgba(29, 78, 216, 0.35);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
-.paper-submission table:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
-}
-
-.paper-submission table th {
-    background: linear-gradient(135deg, #243658, #1e2d4a);
-    color: #ffffff;
-    padding: clamp(15px, 3vw, 20px) clamp(18px, 4vw, 25px);
-    text-align: left;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: clamp(0.5px, 0.2vw, 1px);
-    font-size: clamp(0.85rem, 1.8vw, 1rem);
-    border-bottom: 3px solid #BE2633;
-}
-
-.paper-submission table td {
-    padding: clamp(12px, 3vw, 18px) clamp(18px, 4vw, 25px);
-    color: #4a5568;
-    font-weight: 500;
-    font-size: clamp(0.9rem, 2vw, 1.05rem);
-    border-bottom: 1px solid rgba(226, 232, 240, 0.5);
-    transition: all 0.3s ease;
-}
-
-.paper-submission table td:first-child {
-    font-weight: 600;
-    color: #243658;
-}
-
-.paper-submission table td:last-child {
-    color: #2d3748;
-    font-weight: 600;
-}
-
-.paper-submission table tbody tr {
-    background: rgba(255, 255, 255, 0.8);
-    transition: all 0.3s ease;
-}
-
-.paper-submission table tbody tr:nth-child(even) {
-    background: rgba(248, 250, 252, 0.8);
-}
-
-.paper-submission table tbody tr:hover {
-    background: rgba(190, 38, 51, 0.08);
-    transform: translateX(3px);
-}
-
-.paper-submission table tbody tr:hover td:first-child {
-    color: #BE2633;
-}
-
-/* ====== RESPONSIVE DESIGN - PRESERVING LAPTOP/DESKTOP STYLES ====== */
-
-/* Large Desktop (1281px and up) - Enhanced styles */
-@media (min-width: 1281px) {
-    .paper-submission {
-        padding: 100px 50px;
-    }
-    
-    .paper-submission h3 {
-        font-size: 2.6rem;
-        letter-spacing: 2px;
-        margin-bottom: 40px;
-    }
-    
-    .paper-submission p {
-        font-size: 1.3rem;
-        padding: 25px;
-        margin-bottom: 35px;
-    }
-    
-    .paper-submission ul li {
-        font-size: 1.2rem;
-        padding: 25px 30px 25px 70px;
-        margin-bottom: 25px;
-    }
-}
-
-/* Desktop (1025px - 1280px) - Original laptop styles preserved */
-@media (min-width: 1025px) and (max-width: 1280px) {
-    .paper-submission {
-        padding: 80px 40px;
-    }
-    
-    .paper-submission h3 {
-        font-size: 2.4rem;
-        letter-spacing: 1.5px;
-    }
-    
-    .paper-submission p {
-        font-size: 1.2rem;
-        padding: 20px;
-    }
-    
-    .paper-submission ul li {
-        font-size: 1.15rem;
-        padding: 20px 25px 20px 60px;
-    }
-}
-
-/* Small Desktop/Large Tablet (769px - 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .paper-submission {
-        padding: 70px 35px;
-    }
-    
-    .paper-submission h3 {
-        font-size: 2.1rem;
-        letter-spacing: 1.2px;
-        margin-bottom: 30px;
-    }
-    
-    .paper-submission p {
-        font-size: 1.15rem;
-        padding: 18px;
-        margin-bottom: 25px;
-        text-align: left;
-    }
-    
-    .paper-submission ul li {
-        font-size: 1.1rem;
-        padding: 18px 22px 18px 50px;
-        margin-bottom: 18px;
-    }
-    
-    .paper-submission ul li::before {
-        left: 20px;
-        font-size: 1.1em;
-    }
-    
-    .paper-submission table {
-        font-size: 1rem;
-    }
-    
-    .paper-submission table th {
-        padding: 16px 20px;
-        font-size: 0.95rem;
-    }
-    
-    .paper-submission table td {
-        padding: 14px 20px;
-        font-size: 1rem;
-    }
-}
-
-/* Tablet Portrait (481px - 768px) */
-@media (min-width: 481px) and (max-width: 768px) {
-    .paper-submission {
-        padding: 60px 25px;
-    }
-    
-    .paper-submission h3 {
-        font-size: 1.9rem;
-        letter-spacing: 1px;
-        margin-bottom: 25px;
-        padding-bottom: 15px;
-    }
-    
-    .paper-submission h3::after {
-        width: 80px;
-        height: 3px;
-    }
-    
-    .paper-submission h3:hover {
-        transform: translateX(5px);
-        letter-spacing: 1.5px;
-    }
-    
-    .paper-submission h3:hover::after {
-        width: 120px;
-    }
-    
-    .paper-submission p {
-        font-size: 1.1rem;
-        padding: 16px;
-        margin-bottom: 22px;
-        text-align: left;
-    }
-    
-    .paper-submission p:hover {
-        transform: translateX(5px);
-    }
-    
-    .paper-submission ul li {
-        font-size: 1.05rem;
-        padding: 16px 20px 16px 45px;
-        margin-bottom: 16px;
-        border-radius: 12px;
-    }
-    
-    .paper-submission ul li::before {
-        left: 18px;
-        font-size: 1rem;
-    }
-    
-    .paper-submission ul li:hover {
-        transform: translateX(6px);
-    }
-    
-    .paper-submission table {
-        font-size: 0.95rem;
-        margin: 30px 0;
-    }
-    
-    .paper-submission table th {
-        padding: 14px 16px;
-        font-size: 0.9rem;
-        letter-spacing: 0.8px;
-    }
-    
-    .paper-submission table td {
-        padding: 12px 16px;
-        font-size: 0.95rem;
-    }
-}
-
-/* Mobile Landscape/Large Mobile (361px - 480px) */
-@media (min-width: 361px) and (max-width: 480px) {
-    .paper-submission {
-        padding: 50px 20px;
-        min-height: auto;
-    }
-    
-    .paper-submission h3 {
-        font-size: 1.7rem;
-        letter-spacing: 0.8px;
-        margin-bottom: 20px;
-        padding-bottom: 12px;
-        text-align: center;
-    }
-    
-    .paper-submission h3::after {
-        width: 70px;
-        height: 3px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    
-    .paper-submission h3:hover {
-        transform: translateX(0);
-        letter-spacing: 1.2px;
-    }
-    
-    .paper-submission h3:hover::after {
-        width: 100px;
-    }
-    
-    .paper-submission p {
-        font-size: 1.05rem;
-        padding: 14px;
-        margin-bottom: 20px;
-        text-align: left;
-        line-height: 1.7;
-    }
-    
-    .paper-submission p:hover {
-        transform: translateX(3px);
-    }
-    
-    .paper-submission ul li {
-        font-size: 1.02rem;
-        padding: 14px 18px 14px 40px;
-        margin-bottom: 14px;
-        border-radius: 10px;
-        line-height: 1.6;
-    }
-    
-    .paper-submission ul li::before {
-        left: 16px;
-        font-size: 0.95em;
-    }
-    
-    .paper-submission ul li:hover {
-        transform: translateX(4px);
-    }
-    
-    /* Simplified table for mobile */
-    .paper-submission table {
-        font-size: 0.9rem;
-        margin: 25px 0;
-        border-radius: 8px;
-    }
-    
-    .paper-submission table th {
-        padding: 12px 14px;
-        font-size: 0.85rem;
-        letter-spacing: 0.6px;
-    }
-    
-    .paper-submission table td {
-        padding: 10px 14px;
-        font-size: 0.9rem;
-    }
-    
-    .paper-submission table tbody tr:hover {
-        transform: translateX(2px);
-    }
-}
-
-/* Small Mobile (320px - 360px) */
-@media (max-width: 360px) {
-    .paper-submission {
-        padding: 40px 15px;
-        min-height: auto;
-    }
-    
-    .paper-submission h3 {
-        font-size: 1.5rem;
-        letter-spacing: 0.6px;
-        margin-bottom: 18px;
-        padding-bottom: 10px;
-        text-align: center;
-        line-height: 1.3;
-    }
-    
-    .paper-submission h3::after {
-        width: 60px;
-        height: 2px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    
-    .paper-submission h3:hover {
-        transform: translateX(0);
-        letter-spacing: 1px;
-    }
-    
-    .paper-submission h3:hover::after {
-        width: 80px;
-    }
-    
-    .paper-submission p {
-        font-size: 1rem;
-        padding: 12px;
-        margin-bottom: 18px;
-        text-align: left;
-        line-height: 1.6;
-        border-radius: 8px;
-    }
-    
-    .paper-submission p:hover {
-        transform: translateX(2px);
-    }
-    
-    .paper-submission ul li {
-        font-size: 1rem;
-        padding: 12px 16px 12px 36px;
-        margin-bottom: 12px;
-        border-radius: 8px;
-        line-height: 1.5;
-    }
-    
-    .paper-submission ul li::before {
-        left: 14px;
-        font-size: 0.9em;
-    }
-    
-    .paper-submission ul li:hover {
-        transform: translateX(3px);
-    }
-    
-    /* Ultra-compact table for small screens */
-    .paper-submission table {
-        font-size: 0.85rem;
-        margin: 20px 0;
-        border-radius: 6px;
-    }
-    
-    .paper-submission table th {
-        padding: 10px 12px;
-        font-size: 0.8rem;
-        letter-spacing: 0.4px;
-    }
-    
-    .paper-submission table td {
-        padding: 8px 12px;
-        font-size: 0.85rem;
-    }
-    
-    .paper-submission table tbody tr:hover {
-        transform: translateX(1px);
-    }
-}
-
-/* Ultra-wide screens (1440px and up) */
-@media (min-width: 1440px) {
-    .container {
-        max-width: 1400px;
-    }
-    
-    .paper-submission h3 {
-        font-size: 2.8rem;
-        letter-spacing: 2.5px;
-    }
-    
-    .paper-submission p {
-        font-size: 1.35rem;
-        max-width: 80%;
-    }
-    
-    .paper-submission ul li {
-        font-size: 1.25rem;
-        max-width: 85%;
-    }
-}
-
-/* High-resolution displays */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .paper-submission h3::after {
-        box-shadow: 0 4px 15px rgba(190, 38, 51, 0.4);
-    }
-    
-    .paper-submission table {
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-    }
-}
-
-/* Landscape orientation adjustments */
-@media (orientation: landscape) and (max-height: 600px) {
-    .paper-submission {
-        padding: 30px 20px;
-        min-height: auto;
-    }
-    
-    .paper-submission h3 {
-        margin-bottom: 15px;
-    }
-    
-    .paper-submission p {
-        margin-bottom: 15px;
-    }
-    
-    .paper-submission ul li {
-        margin-bottom: 10px;
-    }
-}
-
-/* ====== LOADING ANIMATION ====== */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.paper-submission h3,
-.paper-submission p,
-.paper-submission ul li,
-.paper-submission table {
-    animation: fadeInUp 0.6s ease forwards;
-}
-
-.paper-submission h3:nth-of-type(1) { animation-delay: 0.1s; }
-.paper-submission h3:nth-of-type(2) { animation-delay: 0.2s; }
-.paper-submission h3:nth-of-type(3) { animation-delay: 0.3s; }
-.paper-submission h3:nth-of-type(4) { animation-delay: 0.4s; }
-.paper-submission h3:nth-of-type(5) { animation-delay: 0.5s; }
-
-.paper-submission table { animation-delay: 0.6s; }
-
-/* ====== ACCESSIBILITY IMPROVEMENTS ====== */
+/* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
-    .paper-submission h3,
-    .paper-submission p,
-    .paper-submission ul li,
-    .paper-submission table,
-    .paper-submission h3::after {
-        animation: none;
-        transition: none;
-    }
-    
-    .paper-submission h3:hover,
-    .paper-submission p:hover,
-    .paper-submission ul li:hover,
-    .paper-submission table:hover {
-        transform: none;
-    }
+  .paper-submission * {
+    transition: none !important;
+    animation: none !important;
+  }
 }
 
-/* Print styles */
+/* Responsive */
+@media (max-width: 900px) {
+  .paper-submission { padding: 56px 20px; }
+}
+
+@media (max-width: 560px) {
+  .paper-submission { padding: 44px 16px; }
+  .paper-submission .container { max-width: 100%; }
+  .paper-submission h3 { text-transform: none; letter-spacing: 0.5px; }
+  .paper-submission h3::after { width: 72px; }
+}
+
+/* Print */
 @media print {
-    .paper-submission {
-        background: white;
-        padding: 20px;
-        box-shadow: none;
-    }
-    
-    .paper-submission::before {
-        display: none;
-    }
-    
-    .paper-submission h3,
-    .paper-submission p,
-    .paper-submission ul li {
-        break-inside: avoid;
-    }
+  .paper-submission {
+    background: #fff;
+    padding: 20px;
+    box-shadow: none;
+  }
+  .paper-submission::before { display: none; }
+  .paper-submission h3,
+  .paper-submission p,
+  .paper-submission ul li { break-inside: avoid; }
 }

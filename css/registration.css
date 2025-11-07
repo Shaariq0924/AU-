@@ -5,30 +5,38 @@
 
 /* ---------- Design Tokens ---------- */
 :root {
+  /* Palette */
   --bg: #f9fafc;
   --surface: #ffffff;
-  --surface-glass: rgba(255, 255, 255, 0.9);
+  --surface-glass: rgba(255, 255, 255, 0.92);
   --text: #0f172a;
-  --muted: #6b7280;
+  --muted: #606a7b;
   --heading: #0b1b34;
   --accent: #8b0000;
   --primary: #1d4ed8;
+  --primary-600: #2563eb;
+  --primary-700: #1e40af;
   --primary-light: #eaf1ff;
 
+  /* Table */
   --thead: #103b8a;
   --thead-sub: #1755c4;
   --thead-sub-text: #f2f6ff;
   --row-alt: #f7faff;
 
+  /* Lines & Elevation */
   --border: #e2e8f0;
+  --border-soft: #eef2f7;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 10px 28px rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.10);
+  --shadow-lg: 0 14px 34px rgba(0, 0, 0, 0.14);
 
+  /* Radii */
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 14px;
 
+  /* Spacing */
   --sp-1: 4px;
   --sp-2: 8px;
   --sp-3: 12px;
@@ -38,24 +46,69 @@
   --sp-7: 32px;
   --sp-8: 40px;
 
+  /* Type scale */
+  --fz-xs: 13px;
   --fz-sm: 14px;
   --fz-md: 15px;
   --fz-lg: 17px;
   --fz-xl: clamp(22px, 2vw + 14px, 30px);
 
+  /* Motion */
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur-fast: 160ms;
   --dur: 220ms;
 }
 
+/* High contrast preference */
+@media (prefers-contrast: more) {
+  :root {
+    --border: #c9d2dd;
+    --shadow-sm: none;
+    --shadow-md: none;
+    --shadow-lg: none;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* ---------- Base Reset ---------- */
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
+html {
+  -webkit-text-size-adjust: 100%;
+}
 body {
-  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  font-family: "Inter", "Segoe UI", Roboto, system-ui, -apple-system, sans-serif;
   color: var(--text);
   background: var(--bg);
   margin: 0;
+  line-height: 1.6;
+}
+
+/* Focus styles */
+:where(a, button, [role="button"], .btn, .register-btn):focus-visible {
+  outline: 3px solid color-mix(in oklab, var(--primary) 40%, white 0%);
+  outline-offset: 3px;
+  border-radius: calc(var(--radius-md) - 2px);
+}
+
+/* Links default */
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 
 /* ---------- Layout ---------- */
@@ -87,6 +140,7 @@ body {
 /* ---------- Card ---------- */
 .card {
   background: var(--surface-glass);
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -103,7 +157,7 @@ body {
   background: linear-gradient(180deg, #ffffff, #f4f6fb);
   border-bottom: 1px solid var(--border);
   padding: var(--sp-4) var(--sp-5);
-  font-weight: 600;
+  font-weight: 700;
   font-size: var(--fz-lg);
   color: var(--heading);
 }
@@ -114,13 +168,21 @@ body {
   overflow-x: auto;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+/* Scroll hint for narrow screens */
+.table-wrap:focus-within {
+  outline: 2px dashed var(--primary);
+  outline-offset: 4px;
 }
 
 .fee-table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  min-width: 680px;
+  min-width: 720px;
   font-size: var(--fz-md);
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -129,18 +191,20 @@ body {
 .fee-table thead th {
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 1;
   background: linear-gradient(180deg, var(--thead), #0c3070);
   color: #fff;
   padding: var(--sp-3) var(--sp-4);
-  font-weight: 600;
+  font-weight: 700;
   text-align: center;
   letter-spacing: 0.2px;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  white-space: nowrap;
 }
 .fee-table thead tr:nth-child(2) th {
   background: linear-gradient(180deg, var(--thead-sub), #154a92);
   color: var(--thead-sub-text);
+  top: 44px; /* maintain sticky second row */
 }
 .fee-table thead th:first-child {
   text-align: left;
@@ -165,19 +229,23 @@ body {
 }
 .fee-table td:first-child {
   text-align: left;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--heading);
   background: #f9fbff;
 }
-.fee-table td:last-child {
+.fee-table td:last-child,
+.fee-table thead th:last-child {
   border-right: none;
 }
+
+/* Amount chip */
 .amount {
   color: var(--accent);
-  font-weight: 700;
-  background: linear-gradient(90deg, #fff3f3, #fff);
-  border-radius: 8px;
-  padding: 4px 10px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #fff4f4, #ffffff);
+  border: 1px solid #f2c9c9;
+  border-radius: 10px;
+  padding: 5px 10px;
   display: inline-block;
 }
 
@@ -188,15 +256,17 @@ body {
 .block-title {
   text-align: center;
   color: var(--heading);
-  font-weight: 700;
+  font-weight: 800;
   font-size: 20px;
   margin-bottom: var(--sp-4);
 }
+
 .pay-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: var(--sp-4);
 }
+
 .pay-card {
   background: #f9fbff;
   border: 1px solid var(--border);
@@ -212,9 +282,12 @@ body {
   padding: var(--sp-3) var(--sp-4);
   background: #e8f0ff;
   color: #103b8a;
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: 0.2px;
   border-bottom: 1px solid #dbe7ff;
 }
+
+/* Key-value table */
 .kv-table {
   width: 100%;
   border-collapse: collapse;
@@ -222,79 +295,116 @@ body {
 }
 .kv-table th,
 .kv-table td {
-  padding: 10px 14px;
+  padding: 11px 14px;
   border-bottom: 1px solid #e6eefc;
   vertical-align: top;
 }
 .kv-table th {
-  width: 42%;
+  width: 40%;
   background: #f4f8ff;
   color: #1f2937;
-  font-weight: 600;
+  font-weight: 700;
 }
 .kv-table tr:last-child th,
 .kv-table tr:last-child td {
   border-bottom: none;
 }
+
 .pay-note {
   background: #edf4ff;
   color: #103b8a;
   padding: var(--sp-3) var(--sp-4);
   font-size: 13px;
+  border-top: 1px solid #dbe7ff;
+}
+
+/* ---------- Scan & Pay (UPI) utilities ---------- */
+.scan-pay {
+  padding: var(--sp-4) var(--sp-4) var(--sp-2);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-3);
+}
+.scan-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--heading);
+}
+.qr-wrap {
+  display: grid;
+  place-items: center;
+  padding: var(--sp-3);
+  background: #ffffff;
+  border: 1px dashed #c9d5f3;
+  border-radius: var(--radius-md);
+}
+.qr-image {
+  width: 220px;
+  height: auto;
+  max-width: 100%;
+  image-rendering: crisp-edges;
+}
+.upi-meta p {
+  margin: 6px 0;
+  font-size: var(--fz-sm);
+  color: var(--text);
+}
+.upi-meta strong {
+  color: var(--heading);
 }
 
 /* ---------- Registration Link ---------- */
 .single-link {
   margin-top: var(--sp-7);
+  text-align: center;
 }
 .single-link .reg-link-card {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-  background: #ffffff;
+  justify-content: center;
+  background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-  padding: 16px 20px;
-  text-decoration: none;
-  color: var(--heading);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 28px 24px;
   transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
 }
 .single-link .reg-link-card:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
 }
 .single-link .label {
-  font-size: 16px;
-  font-weight: 600;
-}
-.single-link .url {
-  font-size: 14px;
-  color: var(--primary);
-  word-break: break-all;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--heading);
+  margin-bottom: 14px;
 }
 
 /* ---------- Buttons ---------- */
-.btn {
+.btn,
+.register-btn {
   display: inline-block;
-  padding: 10px 18px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--primary);
-  background: var(--primary);
+  padding: 12px 22px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--primary), var(--primary-600));
   color: #fff;
-  font-weight: 500;
+  font-weight: 700;
   text-decoration: none;
-  transition: background var(--dur) var(--ease), transform var(--dur) var(--ease);
+  transition: transform var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease);
+  box-shadow: 0 4px 12px rgba(29, 78, 216, 0.25);
+  border: 1px solid color-mix(in oklab, var(--primary) 70%, black 12%);
 }
-.btn:hover {
-  background: color-mix(in srgb, var(--primary) 80%, black);
-  transform: translateY(-1px);
+.btn:hover,
+.register-btn:hover {
+  background: linear-gradient(135deg, var(--primary-700), var(--primary));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(29, 78, 216, 0.28);
 }
-.btn:focus-visible {
-  outline: 3px solid color-mix(in srgb, var(--primary) 40%, transparent);
-  outline-offset: 2px;
+.btn:active,
+.register-btn:active {
+  transform: translateY(0);
 }
 
 /* ---------- Responsive ---------- */
@@ -311,20 +421,22 @@ body {
     font-size: 20px;
   }
   .fee-table {
-    min-width: 950px;
+    min-width: 950px; /* encourage horizontal scroll */
   }
   .single-link .reg-link-card {
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 22px 18px;
   }
 }
 
 /* ---------- Print ---------- */
 @media print {
-  .btn {
+  .btn,
+  .register-btn {
     display: none !important;
   }
-  .card {
-    box-shadow: none;
+  .card,
+  .table-wrap,
+  .pay-card {
+    box-shadow: none !important;
   }
 }
