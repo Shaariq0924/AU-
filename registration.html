@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Registration - SEATNGA - 2026</title>
 
-  <!-- Your sitewide styles -->
+  <!-- Sitewide styles -->
   <link rel="stylesheet" href="css/styles.css"/>
-
   <!-- Page-specific styles -->
   <link rel="stylesheet" href="css/registration.css"/>
 </head>
@@ -129,7 +128,48 @@
         </div>
       </div>
 
-      <!-- Payment details: one-column (International removed) -->
+      <!-- Important Dates (inline on Registration page) -->
+      <section class="card" aria-labelledby="regDatesTitle" style="margin-top:16px;">
+        <div class="card-head" id="regDatesTitle">Important Dates</div>
+        <div class="table-wrap" role="region" aria-label="Important Dates" tabindex="0">
+          <table class="dates-table">
+            <thead>
+              <tr>
+                <th>Event</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Submission of Paper</td>
+                <td>31st January 2026</td>
+              </tr>
+              <tr>
+                <td>Notification of Acceptance</td>
+                <td>28th February 2026</td>
+              </tr>
+              <tr>
+                <td>Camera-ready Paper Submission</td>
+                <td>10th March 2026</td>
+              </tr>
+              <tr>
+                <td>Early Bird Registration</td>
+                <td>15th March 2026</td>
+              </tr>
+              <tr>
+                <td>Last Date for Registration</td>
+                <td>5th April 2026</td>
+              </tr>
+              <tr>
+                <td>Conference Dates</td>
+                <td>24th – 25th April 2026</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Payment details -->
       <section class="payment-split" aria-labelledby="paymentSplitTitle">
         <h2 id="paymentSplitTitle" class="block-title">Conference Registration Fee Payment Details</h2>
         <div class="pay-grid">
@@ -143,15 +183,15 @@
                 <tr><th>Bank Name</th><td>STATE BANK OF INDIA, GHATKESAR</td></tr>
                 <tr><th>Branch Name</th><td>Ghatkesar</td></tr>
                 <tr><th>IFSC Code</th><td>SBIN0020450</td></tr>
+                <tr><th>Swift Code</th><td>SBININBBIND</td></tr>
                 <tr><th>Institute Address</th><td>AU Campus, Hyderabad, Telangana – 500088</td></tr>
-                <tr><th>Payment Remark</th><td>SEATNGA_Paper ID (e.g., SEATNGA_157XXXX)</td></tr>
+                <tr><th>Payment Remark</th><td>SEATNGA_Paper ID </td></tr>
               </tbody>
             </table>
 
             <!-- Scan & Pay block -->
             <div class="scan-pay">
               <h3 class="scan-title">Scan & Pay (UPI)</h3>
-              <!-- Save the QR as an image file (e.g., images/qr-au-sbi.png) after exporting from the provided PDF -->
               <div class="qr-wrap">
                 <img src="images/au_qr.png" alt="UPI QR to pay ANURAG GROUP OF INSTITUTIONS" class="qr-image"/>
               </div>

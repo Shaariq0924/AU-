@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - SEATNGA 2025</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/contact.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - SEATNGA 2025</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-   <!-- Logo Header with Simple Toggle Navigation -->
+  <!-- Logo Header with Simple Toggle Navigation -->
   <section class="logo-header">
     <div class="logo-container">
       <img src="images/logo.png" alt="Anurag University Logo" class="header-logo" />
-      <!-- Simple Toggle Button -->
       <button class="nav-toggle" aria-label="Toggle Navigation" aria-expanded="false" aria-controls="primary-navigation" onclick="toggleNav()">
         ☰
       </button>
@@ -22,33 +21,30 @@
       <nav class="header-nav" id="primary-navigation">
         <ul>
           <li><a href="index.html">HOME</a></li>
-          <li><a href="committees.html" >COMMITTEES</a></li>
+          <li><a href="committees.html">COMMITTEES</a></li>
           <li><a href="speakers.html">SPEAKERS</a></li>
           <li><a href="call_for_papers.html">CALL FOR PAPERS</a></li>
           <li><a href="submission.html">SUBMISSION</a></li>
-          <li><a href="dates.html" >IMPORTANT DATES</a></li>
+          <li><a href="dates.html">IMPORTANT DATES</a></li>
           <li><a href="registration.html">REGISTRATION</a></li>
           <li><a href="past_conferences.html">PAST CONFERENCES</a></li>
-          <li><a href="contact.html"class="active">CONTACT</a></li>
+          <li><a href="contact.html" class="active">CONTACT</a></li>
         </ul>
       </nav>
     </div>
-    
-    <!-- Add overlay for mobile menu -->
     <div class="nav-overlay" onclick="closeNav()">☰</div>
   </section>
 
   <!-- Hero Section -->
   <section class="hero">
     <img src="images/anurag_group_of_institutions_cover.jpg" alt="Hero Background" class="hero-bg" />
-    
     <div class="hero-overlay"></div>
     <div class="hero-gradient"></div>
-    
+
     <div class="hero-logo-section">
       <img src="images/logo_main.png" alt="Hero Logo" class="hero-logo" />
     </div>
-    
+
     <div class="hero-container">
       <div class="hero-content">
         <h2>
@@ -60,168 +56,80 @@
     </div>
   </section>
 
+  <!-- Contact Section -->
+  <section class="contact">
+    <div class="contact-container">
+      <!-- Header -->
+      <div class="contact-header">
+        <h2>Get In Touch</h2>
+        <p class="contact-subtitle">Have questions about the conference? We're here to help! Reach out to us using any of the methods below.</p>
+      </div>
 
-    <!-- Contact Section -->
-    <section class="contact">
-        <div class="contact-container">
-            <!-- Header Section -->
-            <div class="contact-header">
-                <h2>Get In Touch</h2>
-                <p class="contact-subtitle">Have questions about the conference? We're here to help! Reach out to us using any of the methods below.</p>
+      <!-- Contact Grid (Info only, full width) -->
+      <div class="contact-grid contact-grid-single">
+        <!-- Contact Information -->
+        <div class="contact-info-section">
+          <div class="section-header">
+            <h3><i class="fas fa-info-circle"></i> Contact Information</h3>
+            <p>You can also reach us directly through any of these channels.</p>
+          </div>
+
+          <div class="contact-methods">
+            <div class="contact-method">
+              <div class="method-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="method-content">
+                <h4>Address</h4>
+                <p>Anurag University<br>Venkatapur, Ghatkesar<br>Hyderabad - 500088<br>Telangana, India</p>
+              </div>
             </div>
 
-            <!-- Contact Grid -->
-            <div class="contact-grid">
-                <!-- Contact Form -->
-                <div class="contact-form-section">
-                    <div class="section-header">
-                        <h3><i class="fas fa-paper-plane"></i> Send us a Message</h3>
-                        <p>Fill out the form below and we'll get back to you as soon as possible.</p>
-                    </div>
-                    
-                    <form class="contact-form" action="#" method="POST">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name"><i class="fas fa-user"></i> Full Name</label>
-                                <input type="text" id="name" name="name" placeholder="Your full name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
-                                <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
-                                <input type="tel" id="phone" name="phone" placeholder="+91 12345 67890">
-                            </div>
-                            <div class="form-group">
-                                <label for="organization"><i class="fas fa-building"></i> Organization</label>
-                                <input type="text" id="organization" name="organization" placeholder="Your institution/company">
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="subject"><i class="fas fa-tag"></i> Subject</label>
-                            <select id="subject" name="subject" required>
-                                <option value="">Select a topic</option>
-                                <option value="paper-submission">Paper Submission</option>
-                                <option value="registration">Registration</option>
-                                <option value="accommodation">Accommodation</option>
-                                <option value="sponsorship">Sponsorship</option>
-                                <option value="technical">Technical Support</option>
-                                <option value="general">General Inquiry</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message"><i class="fas fa-comment-dots"></i> Message</label>
-                            <textarea id="message" name="message" rows="6" placeholder="Please describe your inquiry in detail..." required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="submit-btn">
-                            <i class="fas fa-paper-plane"></i>
-                            Send Message
-                        </button>
-                    </form>
-                </div>
-
-                <!-- Contact Information -->
-                <div class="contact-info-section">
-                    <div class="section-header">
-                        <h3><i class="fas fa-info-circle"></i> Contact Information</h3>
-                        <p>You can also reach us directly through any of these channels.</p>
-                    </div>
-
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <div class="method-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="method-content">
-                                <h4>Address</h4>
-                                <p>Anurag University<br>Venkatapur, Ghatkesar<br>Hyderabad - 500088<br>Telangana, India</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-method">
-                            <div class="method-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="method-content">
-                                <h4>Email</h4>
-                                <p><a href="mailto:info@SEATNGA2025.com">seatnga2026@anurag.edu.in</a></p>
-                            </div>
-                        </div>
-
-                        <div class="contact-method">
-                            <div class="method-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="method-content">
-                                <h4>Phone Numbers</h4>
-                                <p><strong>Dr. Harish Pulluri:</strong> <a href="tel:+919985267696">+91 99852  67696</a></p>
-                                <p><strong>Dr. Srikanth Goud B:</strong> <a href="tel:+918519894004">+91 85198 94004</a></p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-method">
-                            <div class="method-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="method-content">
-                                <h4>Office Hours</h4>
-                                <p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM</p>
-                                <p><strong>Saturday:</strong> 9:00 AM - 1:00 PM</p>
-                                <p><strong>Sunday:</strong> Closed</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Quick Actions -->
-                    <div class="quick-actions">
-                        <h4><i class="fas fa-rocket"></i> Quick Actions</h4>
-                        <div class="action-buttons">
-                            <a href="call_for_papers.html" class="action-btn">
-                                <i class="fas fa-file-alt"></i>
-                                Submit Paper
-                            </a>
-                            <a href="registration.html" class="action-btn">
-                                <i class="fas fa-user-plus"></i>
-                                Register Now
-                            </a>
-                            <a href="dates.html" class="action-btn">
-                                <i class="fas fa-calendar"></i>
-                                Important Dates
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <div class="contact-method">
+              <div class="method-icon"><i class="fas fa-envelope"></i></div>
+              <div class="method-content">
+                <h4>Email</h4>
+                <p><a href="mailto:seatnga2026@anurag.edu.in">seatnga2026@anurag.edu.in</a></p>
+              </div>
             </div>
 
-            <!-- Map Section -->
-            <div class="map-section">
-                <div class="section-header">
-                    <h3><i class="fas fa-map"></i> Our Location</h3>
-                    <p>Anurag University is located in Venkatapur, Ghatkesar, Hyderabad, Telangana, India.</p>
-                </div>
-                
-                <div class="map-container">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.6587625447944!2d78.6534451!3d17.4198227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb76730bf4dccf%3A0x2ca84b53416f0abd!2sAnurag%20University%2C%20Hyderabad!5e0!3m2!1sen!2sin!4v1739306829353!5m2!1sen!2sin"
-                        width="100%"
-                        height="400"
-                        style="border:0; border-radius: 15px;"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
+            <div class="contact-method">
+              <div class="method-icon"><i class="fas fa-phone"></i></div>
+              <div class="method-content">
+                <h4>Phone Numbers</h4>
+                <p><strong>Dr. Harish Pulluri:</strong> <a href="tel:+919985267696">+91 99852 67696</a></p>
+                <p><strong>Dr. Srikanth Goud B:</strong> <a href="tel:+918519894004">+91 85198 94004</a></p>
+              </div>
             </div>
+
+            <div class="contact-method">
+              <div class="method-icon"><i class="fas fa-clock"></i></div>
+              <div class="method-content">
+                <h4>Office Hours</h4>
+                <p><strong>Monday - Saturday:</strong> 9:00 AM - 4:00 PM</p>
+                <p><strong>Sunday:</strong> Closed</p>
+              </div>
+            </div>
+          </div>
+
+      <!-- Map Section -->
+      <div class="map-section">
+        <div class="section-header">
+          <h3><i class="fas fa-map"></i> Our Location</h3>
+          <p>Anurag University is located in Venkatapur, Ghatkesar, Hyderabad, Telangana, India.</p>
         </div>
-    </section>
-
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.6587625447944!2d78.6534451!3d17.4198227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb76730bf4dccf%3A0x2ca84b53416f0abd!2sAnurag%20University%2C%20Hyderabad!5e0!3m2!1sen!2sin!4v1739306829353!5m2!1sen!2sin"
+            width="100%"
+            height="400"
+            style="border:0; border-radius: 15px;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Logos -->
   <section class="logos">
@@ -240,21 +148,14 @@
       const toggleBtn = document.querySelector('.nav-toggle');
       const overlay = document.querySelector('.nav-overlay');
       const isOpen = nav.classList.toggle('nav-open');
-      
-      // Update button state
+
       toggleBtn.classList.toggle('active', isOpen);
       toggleBtn.setAttribute('aria-expanded', isOpen);
       toggleBtn.textContent = isOpen ? '✖' : '☰';
-      
-      // Handle overlay
-      if (overlay) {
-        overlay.classList.toggle('active', isOpen);
-      }
-      
-      // Prevent body scroll when menu is open
+
+      if (overlay) overlay.classList.toggle('active', isOpen);
       document.body.style.overflow = isOpen ? 'hidden' : 'auto';
-      
-      // Add smooth animation delay for menu items
+
       if (isOpen) {
         const menuItems = nav.querySelectorAll('ul li');
         menuItems.forEach((item, index) => {
@@ -267,43 +168,24 @@
       const nav = document.getElementById('primary-navigation');
       const toggleBtn = document.querySelector('.nav-toggle');
       const overlay = document.querySelector('.nav-overlay');
-      
+
       nav.classList.remove('nav-open');
       toggleBtn.classList.remove('active');
       toggleBtn.setAttribute('aria-expanded', false);
       toggleBtn.textContent = '☰';
-      
-      if (overlay) {
-        overlay.classList.remove('active');
-      }
-      
+
+      if (overlay) overlay.classList.remove('active');
       document.body.style.overflow = 'auto';
     }
 
-    // Enhanced event listeners
     document.addEventListener('DOMContentLoaded', function() {
-      // Close menu on link click (mobile)
       document.querySelectorAll('.header-nav ul li a').forEach(link => {
         link.addEventListener('click', () => {
-          if (window.innerWidth <= 1024) {
-            closeNav();
-          }
+          if (window.innerWidth <= 1024) closeNav();
         });
       });
-      
-      // Close nav on window resize if desktop
-      window.addEventListener('resize', () => {
-        if (window.innerWidth > 1024) {
-          closeNav();
-        }
-      });
-      
-      // Handle escape key
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-          closeNav();
-        }
-      });
+      window.addEventListener('resize', () => { if (window.innerWidth > 1024) closeNav(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeNav(); });
     });
   </script>
 </body>
