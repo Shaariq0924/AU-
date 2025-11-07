@@ -279,9 +279,9 @@ body {
 }
 
 .proceedings-inline-logo {
-  width: 180px; /* make image bigger */
+  width: 200px; /* make image bigger */
   height: auto;
-  margin-left: 10px;
+  margin-left: 100px;
 }
 
 @media (max-width: 768px) {
