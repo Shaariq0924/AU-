@@ -62,14 +62,14 @@
 *,*::before,*::after{ box-sizing:border-box }
 html{ -webkit-text-size-adjust:100% }
 body{
-  font-family:Inter, "Segoe UI", Roboto, system-ui, -apple-system, sans-serif;
+  font-family:Inter,"Segoe UI",Roboto,system-ui,-apple-system,sans-serif;
   color:var(--text); background:var(--bg); margin:0; line-height:var(--lh);
   text-rendering:optimizeLegibility; -webkit-font-smoothing:antialiased;
 }
 
 /* Focus ring */
 :where(a,button,[role="button"],.btn,.register-btn):focus-visible{
-  outline:3px solid color-mix(in oklab, var(--primary) 42%, white);
+  outline:3px solid color-mix(in oklab,var(--primary) 42%, white);
   outline-offset:3px; border-radius:calc(var(--radius-md) - 2px);
 }
 
@@ -80,6 +80,12 @@ a:hover{ text-decoration:underline }
 /* ---------- Layout ---------- */
 .registration{ padding:var(--sp-7) var(--sp-3) var(--sp-8) }
 .registration .container{ max-width:1100px; margin:0 auto }
+
+/* OPTIONAL: make Registration page full width like Contact (uncomment below) */
+/*
+.registration{ padding:72px clamp(16px,4vw,48px) 88px }
+.registration .container{ max-width:none; padding:0 }
+*/
 
 /* ---------- Headings ---------- */
 .section-title{
@@ -120,13 +126,13 @@ a:hover{ text-decoration:underline }
 }
 .fee-table thead th{
   position:sticky; top:0; z-index:2;
-  background:linear-gradient(180deg, var(--thead), #0c3070);
+  background:linear-gradient(180deg,var(--thead),#0c3070);
   color:#fff; padding:var(--sp-3) var(--sp-4); font-weight:800; text-align:center;
   letter-spacing:.2px; border-right:1px solid rgba(255,255,255,.12); white-space:nowrap;
 }
 .fee-table thead tr:nth-child(2) th{
-  background:linear-gradient(180deg, var(--thead-sub), #154a92);
-  color:var(--thead-sub-text); top:44px; z-index:1;
+  background:linear-gradient(180deg,var(--thead-sub),#154a92);
+  color:var(--thead-sub-text); top:44px; z-index:3;   /* ensure above first row */
 }
 .fee-table thead th:first-child{ text-align:left; padding-left:var(--sp-5) }
 
@@ -233,7 +239,7 @@ a:hover{ text-decoration:underline }
   color:#fff; font-weight:800; text-decoration:none;
   transition:transform var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease);
   box-shadow:0 4px 12px rgba(29,78,216,.25);
-  border:1px solid color-mix(in oklab, var(--primary) 70%, black 12%);
+  border:1px solid color-mix(in oklab,var(--primary) 70%, black 12%);
 }
 .btn:hover,.register-btn:hover{
   background:linear-gradient(135deg,var(--primary-700),var(--primary));

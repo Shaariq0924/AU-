@@ -39,14 +39,11 @@
   <!-- Hero Section -->
   <section class="hero">
     <img src="images/anurag_group_of_institutions_cover.jpg" alt="Hero Background" class="hero-bg" />
-    
     <div class="hero-overlay"></div>
     <div class="hero-gradient"></div>
-    
     <div class="hero-logo-section">
       <img src="images/logo_main.png" alt="Hero Logo" class="hero-logo" />
     </div>
-    
     <div class="hero-container">
       <div class="hero-content">
         <h2>
@@ -60,45 +57,46 @@
 
   <!-- Important Dates Section -->
   <section class="paper-submission">
-    <div class="container">
+    <div class="container-like">
       <h3>Important Dates</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Event</th>
-            <th>Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Submission of Paper</td>
-            <td>31th January 2026</td>
-          </tr>
-          <tr>
-            <td>Notification of Acceptance</td>
-            <td>28th Febuary 2026</td>
-          </tr>
-          <tr>
-            <td>Camera-ready Paper Submission</td>
-            <td>10th March 2026</td>
-          </tr>
-          <tr>
-            <td>Early Bird Registration</td>
-            <td>15th March 2026</td>
-          </tr>
-          <tr>
-            <td>Last Date for Registration</td>
-            <td>5th April 2026</td>
-          </tr>
-          <tr>
-            <td>Conference Dates</td>
-            <td>24th -25th April 2026</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-wrap" role="region" aria-label="Important Dates" tabindex="0">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Event</th>
+              <th scope="col">Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td scope="row">Submission of Paper</td>
+              <td>31st January 2026</td>
+            </tr>
+            <tr>
+              <td scope="row">Notification of Acceptance</td>
+              <td>28th February 2026</td>
+            </tr>
+            <tr>
+              <td scope="row">Camera-ready Paper Submission</td>
+              <td>10th March 2026</td>
+            </tr>
+            <tr>
+              <td scope="row">Early Bird Registration</td>
+              <td>15th March 2026</td>
+            </tr>
+            <tr>
+              <td scope="row">Last Date for Registration</td>
+              <td>5th April 2026</td>
+            </tr>
+            <tr>
+              <td scope="row">Conference Dates</td>
+              <td>24th – 25th April 2026</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
-
 
   <!-- Logos -->
   <section class="logos">
@@ -118,20 +116,13 @@
       const overlay = document.querySelector('.nav-overlay');
       const isOpen = nav.classList.toggle('nav-open');
       
-      // Update button state
       toggleBtn.classList.toggle('active', isOpen);
       toggleBtn.setAttribute('aria-expanded', isOpen);
       toggleBtn.textContent = isOpen ? '✖' : '☰';
       
-      // Handle overlay
-      if (overlay) {
-        overlay.classList.toggle('active', isOpen);
-      }
-      
-      // Prevent body scroll when menu is open
+      if (overlay) overlay.classList.toggle('active', isOpen);
       document.body.style.overflow = isOpen ? 'hidden' : 'auto';
       
-      // Add smooth animation delay for menu items
       if (isOpen) {
         const menuItems = nav.querySelectorAll('ul li');
         menuItems.forEach((item, index) => {
@@ -149,38 +140,16 @@
       toggleBtn.classList.remove('active');
       toggleBtn.setAttribute('aria-expanded', false);
       toggleBtn.textContent = '☰';
-      
-      if (overlay) {
-        overlay.classList.remove('active');
-      }
-      
+      if (overlay) overlay.classList.remove('active');
       document.body.style.overflow = 'auto';
     }
 
-    // Enhanced event listeners
     document.addEventListener('DOMContentLoaded', function() {
-      // Close menu on link click (mobile)
       document.querySelectorAll('.header-nav ul li a').forEach(link => {
-        link.addEventListener('click', () => {
-          if (window.innerWidth <= 1024) {
-            closeNav();
-          }
-        });
+        link.addEventListener('click', () => { if (window.innerWidth <= 1024) closeNav(); });
       });
-      
-      // Close nav on window resize if desktop
-      window.addEventListener('resize', () => {
-        if (window.innerWidth > 1024) {
-          closeNav();
-        }
-      });
-      
-      // Handle escape key
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-          closeNav();
-        }
-      });
+      window.addEventListener('resize', () => { if (window.innerWidth > 1024) closeNav(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeNav(); });
     });
   </script>
 </body>
